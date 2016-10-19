@@ -45,16 +45,16 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
-if 
+if
 bash_prompt_command()
 {
     RTN=$?
@@ -130,7 +130,7 @@ EDITOR=/usr/bin/vim
 iatest=$(expr index "$-" i)
 
 #function, to check, if programm/package ist installed (for individual aliases)
-debInst() 
+debInst()
 {
     dpkg-query -Wf'${db:Status-abbrev}' "$1" 2>/dev/null | grep -q '^i'
 }
@@ -223,7 +223,9 @@ alias df='df -H'
 alias du='du -ch'
 alias lvim="vim -c \"normal '0\""
 alias ducks='du -ck | sort -nr | head'
-
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias svim='sudo vim'
+alias svi='sudo vim'
 
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
