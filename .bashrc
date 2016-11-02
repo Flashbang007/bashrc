@@ -254,10 +254,10 @@ alias apt-get='sudo apt-get'
 alias svi='sudo vi'
 alias svim='sudo vim'
 alias svi='sudo vim'
-alias updgrade='sudo apt-get update && sudo apt-get upgrade'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 else
-alias updgrade='apt-get update && apt-get upgrade'
+alias upgrade='apt-get update && apt-get upgrade'
 fi
 
 #list all files in changed directory
