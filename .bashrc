@@ -144,7 +144,6 @@ alias da='date "+%Y-%m-%d %A %T %Z"'
 #makes eveything verbose
 alias rm='rm -v'
 alias cp='cp -p'
-alias apt-get='sudo apt-get'
 
 # Change directory aliases
 alias home='cd ~'
@@ -171,13 +170,6 @@ alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
 
-# alias chmod commands
-alias mx='sudo chmod a+x'
-alias 000='sudo chmod -R 000'
-alias 644='sudo chmod -R 644'
-alias 666='sudo chmod -R 666'
-alias 755='sudo chmod -R 755'
-alias 777='sudo chmod -R 777'
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
@@ -212,20 +204,14 @@ alias ungz='tar -xvzf'
 
 #Usefull Aliases
 alias vi='vim'
-alias apt-get='sudo apt-get'
 alias bc='bc -l'
 alias mkdir='mkdir -pv'
 alias diff='colordiff'
-alias svi='sudo vi'
-alias updgrade='sudo apt-get update && sudo apt-get upgrade'
 alias cpuinfo='lscpu'
 alias df='df -H'
 alias du='du -ch'
 alias lvim="vim -c \"normal '0\""
 alias ducks='du -ck | sort -nr | head'
-alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-alias svim='sudo vim'
-alias svi='sudo vim'
 
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
@@ -253,6 +239,26 @@ extract () {
 
 #Uses changes, made in .bashrc directly after closing
 alias bashrc="$EDITOR ~/.bashrc && source ~/.bashrc"
+
+# alias commands (Only, when not root)
+if [ "$(id -u)" != "0" ]; then
+alias mx='sudo chmod a+x'
+alias 000='sudo chmod -R 000'
+alias 644='sudo chmod -R 644'
+alias 666='sudo chmod -R 666'
+alias 755='sudo chmod -R 755'
+alias 777='sudo chmod -R 777'
+#
+alias apt-get='sudo apt-get'
+#
+alias svi='sudo vi'
+alias svim='sudo vim'
+alias svi='sudo vim'
+alias updgrade='sudo apt-get update && sudo apt-get upgrade'
+
+else
+alias updgrade='apt-get update && apt-get upgrade'
+fi
 
 #list all files in changed directory
 cdl()
