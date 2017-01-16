@@ -169,6 +169,7 @@ alias ll='ls -Fls' # long listing format
 alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
+alias sl="sudo ls -lash"
 
 
 # Count all files (recursively) in the current folder
