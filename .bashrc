@@ -1,5 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-
+PATH="$PATH:~/bin"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -221,6 +221,7 @@ extract () {
             case $archive in
                 *.tar.bz2)   tar xvjf $archive    ;;
                 *.tar.gz)    tar xvzf $archive    ;;
+                *.tar.xz)    tar xvfJ $archive    ;;
                 *.bz2)       bunzip2 $archive     ;;
                 *.rar)       rar x $archive       ;;
                 *.gz)        gunzip $archive      ;;
@@ -249,8 +250,10 @@ alias 644='sudo chmod -R 644'
 alias 666='sudo chmod -R 666'
 alias 755='sudo chmod -R 755'
 alias 777='sudo chmod -R 777'
+alias 700='sudo chmod -R 700'
 #
 alias apt-get='sudo apt-get'
+alias apt='sudo apt'
 #
 alias svi='sudo vi'
 alias svim='sudo vim'
